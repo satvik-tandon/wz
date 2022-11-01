@@ -120,7 +120,7 @@ Install()
 
     # If update, stop Wazuh
     if [ "X${update_only}" = "Xyes" ]; then
-        echo "Stopping Wazuh..."
+        echo "Stopping tbSIEM.."
         UpdateStopOSSEC
     fi
 
@@ -143,14 +143,14 @@ Install()
         WazuhUpgrade
         # Update versions previous to Wazuh 1.2
         UpdateOldVersions
-        echo "Starting Wazuh..."
+        echo "Starting tbSIEM..."
         UpdateStartOSSEC
     fi
 
     if [ $runinit_value = 1 ]; then
         notmodified="yes"
     elif [ "X$START_WAZUH" = "Xyes" ]; then
-        echo "Starting Wazuh..."
+        echo "Starting tbSIEM..."
         UpdateStartOSSEC
     fi
 
@@ -610,7 +610,7 @@ askForDelete()
 
         case $ANSWER in
             $yesmatch)
-                echo "      Stopping Wazuh..."
+                echo "      Stopping tbSIEM..."
                 UpdateStopOSSEC
                 rm -rf $INSTALLDIR
                 if [ ! $? = 0 ]; then
