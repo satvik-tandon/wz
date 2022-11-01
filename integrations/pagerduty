@@ -25,7 +25,7 @@ PWD=`pwd`
 
 build_payload () {
     #echo 'payload={"username":"OSSEC2slack Integration from '$alertlocation'", "icon_emoji": ":ghost:", "text": "OSSEC Alert\n```'$alertdate $alertlocation'\nRule:'$ruleid' (level '$alertlevel'): '$ruledescription'\nIP:'$srcip'\n'$alertlog'\n```"}' > $postfile
-    payload="{\"service_key\": \"$APIKEY\", \"incident_key\": \"Alert: '$alertdate' / Rule: '$ruleid'\", \"event_type\": \"trigger\", \"description\": \"Wazuh Alert: '$ruledescription'\", \"client\": \"Wazuh\", \"client_url\": \"http://127.0.0.1:5601/app/tbSIEM\", \"details\": { \"location\": \"'$alertlocation'\", \"Rule\":\"'$ruleid'\", \"Description\":\"'$ruledescription'\", \"Log\": \"'$alertlog'\" } }";
+    payload="{\"service_key\": \"$APIKEY\", \"incident_key\": \"Alert: '$alertdate' / Rule: '$ruleid'\", \"event_type\": \"trigger\", \"description\": \"Wazuh Alert: '$ruledescription'\", \"client\": \"Wazuh\", \"client_url\": \"http://127.0.0.1:5601/app/wazuh\", \"details\": { \"location\": \"'$alertlocation'\", \"Rule\":\"'$ruleid'\", \"Description\":\"'$ruledescription'\", \"Log\": \"'$alertlog'\" } }";
 
 }
 
