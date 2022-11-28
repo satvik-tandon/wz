@@ -22,9 +22,9 @@
 /* Maximum body size */
 #define BODY_SIZE           OS_MAXSTR + OS_SIZE_1024
 
-#define SMS_SUBJECT         "Wazuh %d - %d - %s"
-#define MAIL_SUBJECT        "Wazuh notification - %s - Alert level %d"
-#define MAIL_SUBJECT_FULL   "Wazuh alert - %s - Level %d - %s"
+#define SMS_SUBJECT         "TechBridge %d - %d - %s"
+#define MAIL_SUBJECT        "tbSIEM notification - %s - Alert level %d"
+#define MAIL_SUBJECT_FULL   "tbSIEM alert - %s - Level %d - %s"
 
 /* Full subject without ossec in the name */
 #ifdef CLEANFULL
@@ -32,7 +32,7 @@
 #endif
 
 #ifdef LIBGEOIP_ENABLED
-#define MAIL_BODY           "\r\n" __ossec_name " Notification.\r\n" \
+#define MAIL_BODY           "\r\n" "tbSIEM" " Notification.\r\n" \
                             "%s\r\n\r\n" \
                             "Received From: %s\r\n" \
                             "Rule: %d fired (level %d) -> \"%s\"\r\n" \
@@ -42,7 +42,7 @@
                             "Portion of the log(s):\r\n\r\n%s\r\n" \
                             "\r\n\r\n --END OF NOTIFICATION\r\n\r\n\r\n"
 #else
-#define MAIL_BODY           "\r\n" __ossec_name " Notification.\r\n" \
+#define MAIL_BODY           "\r\n" "TechBridge" " Notification.\r\n" \
                             "%s\r\n\r\n" \
                             "Received From: %s\r\n" \
                             "Rule: %d fired (level %d) -> \"%s\"\r\n" \
